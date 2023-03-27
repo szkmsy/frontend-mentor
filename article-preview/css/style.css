@@ -1,0 +1,183 @@
+:root {
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  /* Colors */
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--light-grayish-blue);
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  margin: 2rem;
+  max-width: 62rem;
+}
+.card__img {
+  flex: 1 0 20rem;
+  align-self: stretch;
+}
+.card__img img {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.card__text {
+  color: var(--very-dark-grayish-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 2rem;
+  max-width: 38rem;
+}
+.card__text h3 {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+.card__text p {
+  font-size: 1.2rem;
+}
+.card__avator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__avator-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card__avator-img {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 3rem;
+  width: 3rem;
+}
+.card__avator h4 span {
+  color: var(--grayish-blue);
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.share input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox]:checked ~ .share__button {
+  background-color: var(--desaturated-dark-blue);
+  top: 0.7rem;
+}
+input[type=checkbox]:checked ~ .share__button img {
+  filter: brightness(300%);
+}
+.share__button {
+  background-color: var(--light-grayish-blue);
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+  height: 3rem;
+  width: 3rem;
+}
+.share__button img {
+  height: 50%;
+  width: 50%;
+}
+input[type=checkbox]:checked ~ .share__social {
+  visibility: visible;
+  opacity: 1;
+}
+.share__social {
+  background-color: var(--very-dark-grayish-blue);
+  border-radius: 0.5rem;
+  color: var(--grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1.5rem;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-height: 5.5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+.share__social span {
+  letter-spacing: 0.5rem;
+}
+.share__social a {
+  height: 2rem;
+  width: 2rem;
+}
+
+@media (min-width: 800px) {
+  .card__img {
+    flex: 1 0 20rem;
+    align-self: stretch;
+  }
+  .card__img img {
+    border-radius: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .share__social {
+    box-shadow: 0 0.5rem 1rem 0.2rem rgba(0, 0, 0, 0.2);
+    bottom: 6.5rem;
+    left: calc(80% - 2rem);
+    min-height: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .share__social::after {
+    background-color: var(--very-dark-grayish-blue);
+    content: "";
+    position: absolute;
+    bottom: -0.8rem;
+    left: 50%;
+    transform: rotate(45deg);
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */

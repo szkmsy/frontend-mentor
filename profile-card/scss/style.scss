@@ -1,0 +1,117 @@
+:root {
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 18px;
+
+  /* Colors */
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark-cyan);
+  height: 100vh;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+.img {
+  position: absolute;
+  --img-size: min(100vw, 100vh);
+  z-index: -1;
+  &__top {
+    top: 0;
+    left: 0;
+    transform: translate(-40%, -50%);
+    height: var(--img-size);
+    width: var(--img-size);
+  }
+  &__bottom {
+    bottom: 0;
+    right: 0;
+    transform: translate(40%, 50%);
+    height: var(--img-size);
+    width: var(--img-size);
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 5rem 0.1rem rgba(0 0 0 / 0.4);
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  width: 18.75rem;
+  height: 20rem;
+  &__img {
+    background-color: white;
+    margin-bottom: 3rem;
+  }
+  &__icon {
+    border: 6px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+      border-radius: inherit;
+    }
+  }
+  h2 {
+    color: var(--very-dark-desaturated-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+    span {
+      color: var(--dark-grayish-blue);
+      font-size: 1.1rem;
+      font-weight: 400;
+      padding-left: 0.25rem;
+    }
+  }
+  p {
+    color: var(--dark-grayish-blue);
+    margin: 0.25rem 0 1.5rem;
+  }
+  ul {
+    border-top: 1px solid var(--dark-gray);
+    list-style: none;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    li {
+      color: var(--very-dark-desaturated-blue);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-weight: 700;
+      span {
+        font-size: 0.7rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

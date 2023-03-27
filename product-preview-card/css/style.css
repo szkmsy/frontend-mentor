@@ -1,0 +1,116 @@
+:root {
+  box-sizing: border-box;
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 14px;
+  /* Colors */
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  background-color: var(--cream);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 8px;
+  color: var(--dark-grayish-blue);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 2rem;
+  max-width: 50rem;
+}
+.card__img {
+  flex: 23rem;
+  align-self: stretch;
+  max-height: 70vw;
+}
+.card__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5em 2em;
+  flex: 25rem;
+}
+.card__content h3 {
+  color: var(--very-dark-blue);
+  font-family: "Montserrat", sans-serif;
+  font-size: min(7vw, 2.5rem);
+}
+.card__content h3 span {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  margin-bottom: 1rem;
+}
+.card__content p {
+  font-size: min(3vw, 1.3rem);
+}
+.card__content ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.card__content ul li:first-child {
+  color: var(--dark-cyan);
+  font-size: 2rem;
+}
+.card__content ul li:last-child {
+  text-decoration: line-through;
+}
+.card__content button {
+  background-color: transparent;
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 0;
+}
+.card__content button::before {
+  background-color: var(--dark-cyan);
+  content: "";
+  border-radius: 0.5rem;
+  position: absolute;
+  z-index: -1;
+  transition: 0.5s;
+  height: 100%;
+  width: 100%;
+}
+.card__content button:hover::before {
+  filter: brightness(50%);
+}/*# sourceMappingURL=style.css.map */

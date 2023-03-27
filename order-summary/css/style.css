@@ -1,0 +1,121 @@
+:root {
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  /* Colors */
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("../images/pattern-background-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+@media (min-width: 800px) {
+  body {
+    background-image: url("../images/pattern-background-desktop.svg");
+  }
+}
+
+.card {
+  background-color: var(--very-pale-blue);
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0.3rem 1rem 0.1rem var(--desaturated-blue);
+  width: 85%;
+  max-width: 20rem;
+}
+.card__img img {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  height: 100%;
+  width: 100%;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem 1.5rem;
+}
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+.card__text h3 {
+  color: var(--dark-blue);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.card__text p {
+  color: var(--desaturated-blue);
+}
+.card__plan {
+  color: var(--dark-blue);
+  background-color: var(--very-pale-blue);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.card__plan h4 span:first-child {
+  font-weight: 900;
+}
+.card__plan h4 span:last-child {
+  color: var(--desaturated-blue);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.card__plan a {
+  color: var(--bright-blue);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+.card__plan a:hover {
+  opacity: 0.5;
+}
+.card__button {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.card__button button {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+}
+.card__button button:first-child {
+  background-color: var(--bright-blue);
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 3rem -1.2rem var(--bright-blue);
+  color: var(--very-pale-blue);
+  padding: 1rem 0;
+}
+.card__button button:first-child:hover {
+  opacity: 0.75;
+}
+.card__button button:last-child {
+  background-color: inherit;
+  color: var(--desaturated-blue);
+}
+.card__button button:last-child:hover {
+  color: var(--dark-blue);
+}/*# sourceMappingURL=style.css.map */
