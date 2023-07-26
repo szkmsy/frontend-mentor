@@ -1,0 +1,291 @@
+:root {
+  box-sizing: border-box;
+
+  // color
+  --white: #fff;
+  --navy: #13183f;
+  --light-navy: #666ca3;
+  --gray: #83869a;
+  --pink: #f74780;
+  --light-pink: #ffa7c3;
+
+  --gradient-primary: linear-gradient(to top, #f02aa6, #ff6f48);
+  --gradient-secondary: linear-gradient(to bottom, #4851ff, #f02aa6);
+  --gradient-tertiary: linear-gradient(
+    to bottom,
+    hsl(234, 25%, 99%) 60%,
+    hsl(234, 25%, 95%)
+  );
+
+  // font
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  --font-heading-xl: 3.5rem;
+  --font-heading-l: 2.5rem;
+  --font-heading-m: 2rem;
+  --font-heading-s: 1.5rem;
+  --font-body-s: 1rem;
+  --font-body-m: 1.125rem;
+
+  // line-height
+  --line-height-heading-xl: 1.25;
+  --line-height-heading-l: 1.275;
+  --line-height-heading-m: 1.25;
+  --line-height-heading-s: 1.167;
+  --line-height-body-s: 1.75;
+  --line-height-body-m: 1.56;
+}
+
+@mixin heading($size) {
+  @if $size == "xl" {
+    font-size: var(--font-heading-xl);
+    line-height: var(--line-height-heading-xl);
+    font-weight: 800;
+  } @else if $size == "l" {
+    font-size: var(--font-heading-l);
+    line-height: var(--line-height-heading-l);
+    font-weight: 800;
+  } @else if $size == "m" {
+    font-size: var(--font-heading-m);
+    line-height: var(--line-height-heading-m);
+    font-weight: 800;
+  } @else if $size == "s" {
+    font-size: var(--font-heading-s);
+    line-height: var(--line-height-heading-s);
+    font-weight: 800;
+  } @else if $size == "xs" {
+    font-size: 1.25rem;
+    font-weight: 800;
+  } @else {
+    @error "Unknown size #{$size}.";
+  }
+}
+
+@mixin body($size) {
+  @if $size == "m" {
+    font-size: var(--font-body-m);
+    line-height: var(--line-height-body-m);
+    font-weight: 700;
+  } @else if $size == "s" {
+    font-size: var(--font-body-s);
+    line-height: var(--line-height-body-s);
+    font-weight: 500;
+  } @else {
+    @error "Unknown size #{$size}.";
+  }
+}
+
+// https://cpcwood.com/code-snippets/10-mobile-first-responsive-design-breakpoints-sass-mixin
+$breakpoints: (
+  "tablet": (
+    min-width: 768px,
+  ),
+  "desktop": (
+    min-width: 1024px,
+  ),
+);
+
+@mixin media($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media #{inspect(map-get($breakpoints, $bp))} {
+      @content;
+    }
+  } @else {
+    @error '@mixin media: `#{$bp}` is not a key in breakpoints.' +
+    ' Available breakpoints are: `#{$breakpoints}`';
+  }
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 90rem;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--pink);
+  text-decoration: none;
+  &:hover,
+  &:active {
+    color: var(--light-pink);
+  }
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  padding: 0.75em 1.5em;
+  color: var(--white);
+  border-radius: 1.75em;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+p {
+  color: var(--gray);
+  @include body(s);
+  @include media(desktop) {
+    @include body(m);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--navy);
+}
+
+.button {
+  &-primary {
+    background-color: var(--navy);
+    &:hover {
+      background-color: var(--light-navy);
+    }
+  }
+  &-secondary {
+    background-image: var(--gradient-primary);
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &-tertiary {
+    background-image: var(--gradient-secondary);
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.logo {
+  width: 5.5em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  @include media(tablet) {
+    padding: 1.5em 2.5em;
+  }
+  @include media(desktop) {
+    padding: 2.25em 5em;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  @include media(tablet) {
+    flex-direction: row;
+    margin-bottom: 12em;
+    padding: 1.5em 2.5em;
+  }
+  @include media(desktop) {
+    padding: 2.25em 5em;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5em;
+    @include media(tablet) {
+      flex: 0 0 25em;
+    }
+    @include media(desktop) {
+      flex: 0 0 29em;
+    }
+    > h2 {
+      @include heading(l);
+      @include media(desktop) {
+        @include heading(xl);
+      }
+    }
+  }
+  &__img img {
+    @include media(tablet) {
+      position: absolute;
+      width: 80%;
+      right: -35%;
+      top: -20%;
+    }
+    @include media(desktop) {
+      width: 60%;
+      right: -25%;
+      top: -15%;
+    }
+  }
+}
+
+.courses {
+  background-image: var(--gradient-tertiary);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  gap: 2.5em;
+  padding: 0 1em 5em;
+  @include media(tablet) {
+    gap: 3.5em;
+    padding: 0 1.5em 5.375em;
+  }
+  @include media(desktop) {
+    gap: 5em;
+    padding: 0 2.25em 8.75em;
+  }
+  &-ad {
+    background-image: var(--gradient-primary);
+    border-radius: 0.625em;
+    color: var(--white);
+    font-size: var(--font-heading-s);
+    font-weight: 800;
+    line-height: var(--line-height-heading-s);
+    padding: 1.5em 1.75em 2em;
+  }
+  &-item {
+    background-color: var(--white);
+    border-radius: 0.625em;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25em;
+    padding: 0 1.75em 2em;
+    &__img {
+      transform: translateY(-50%);
+      margin-bottom: -1.25em;
+    }
+    &__description {
+      margin-bottom: auto;
+    }
+  }
+}
+
+.footer {
+  background-color: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  @include media(tablet) {
+    padding: 2.25em 2.5em;
+  }
+  @include media(desktop) {
+    padding: 2.25em 5em;
+  }
+}
