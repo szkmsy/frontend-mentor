@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <a href="/" class="logo">
+        <img src="images/logo.svg" alt="Base Apparel" />
+      </a>
+    </header>
+
+    <section class="hero">
+      <img
+        srcset="images/hero-mobile.jpg 768w, images/hero-desktop.jpg 1200w"
+        src="images/hero-mobile.jpg"
+        alt="hero"
+      />
+    </section>
+
+    <main class="main">
+      <h2 class="main__title">
+        <span class="main__title--accent">We're</span> coming soon
+      </h2>
+
+      <p class="main__description">
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our
+        launch deals.
+      </p>
+
+      <form class="subscribe-form">
+        <input
+          class="subscribe-form__input"
+          name="email"
+          type="email"
+          placeholder="Email Address"
+          required
+        />
+        <button class="subscribe-form__submit" type="submit">
+          <img src="images/icon-arrow.svg" alt=">" />
+        </button>
+        <p class="subscribe-form__error-message">
+          Please provide a valid email
+        </p>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">szkmsy</a>.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+:root {
+  box-sizing: border-box;
+
+  // color
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  --gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+  // font
+  font-family: "Josefin Sans", sans-serif;
+}
+
+@mixin media-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: inherit;
+  outline-color: var(--desaturated-red);
+}
+
+.page {
+  background: var(--gradient-1);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 0;
+  @include media-tablet {
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    grid-template-columns: 1fr 43vw;
+    grid-template-areas:
+      "header hero"
+      "main hero"
+      "footer footer";
+    padding-left: 12vw;
+  }
+}
+
+.header {
+  padding: 2rem 2rem 0;
+  @include media-tablet {
+    grid-area: header;
+    padding-top: 4.625rem;
+  }
+}
+
+.logo {
+  display: block;
+  width: clamp(6.25rem, 20%, 9.875rem);
+  > img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.hero {
+  @include media-tablet {
+    grid-area: hero;
+    > img {
+      height: 100%;
+    }
+  }
+  > img {
+    aspect-ratio: 16 / 9;
+    object-position: top;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  max-width: 28rem;
+  @include media-tablet {
+    grid-area: main;
+    gap: 1.5rem;
+    padding-bottom: 10vw;
+  }
+  &__title {
+    color: var(--dark-grayish-red);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 0.676875rem;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    @include media-tablet {
+      font-size: 4rem;
+      text-align: start;
+      line-height: 1.1;
+    }
+    &--accent {
+      color: var(--desaturated-red);
+      font-weight: 300;
+      line-height: 1;
+    }
+  }
+  &__description {
+    color: var(--desaturated-red);
+    font-size: 0.875rem;
+    line-height: 1.57;
+    margin-top: 0;
+    text-align: center;
+    @include media-tablet {
+      font-size: 1rem;
+      line-height: 1.75;
+      text-align: start;
+    }
+  }
+}
+
+.subscribe-form {
+  display: grid;
+  grid-template-columns: 1fr 1rem;
+  grid-template-areas:
+    "input submit"
+    "error error";
+  &__input {
+    grid-area: input;
+    border: 1px solid var(--desaturated-red);
+    border-radius: 1.75rem;
+    color: var(--dark-grayish-red);
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 2;
+    outline-color: inherit;
+    padding: 0.5625rem 2.5rem 0.5625rem 1.5rem;
+    @include media-tablet {
+      font-size: 1rem;
+    }
+    &::placeholder {
+      color: var(--desaturated-red);
+    }
+  }
+  &__input:not(:placeholder-shown):invalid {
+    padding-right: 4rem;
+    outline-color: var(--soft-red);
+  }
+  &__input:not(:placeholder-shown):invalid + &__submit::before {
+    z-index: 1;
+  }
+  &__submit {
+    grid-area: submit;
+    background: var(--gradient-2);
+    border: 0;
+    border-radius: 1.75rem;
+    margin-left: -2rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 3rem;
+    &::before {
+      content: url("../images/icon-error.svg");
+      position: absolute;
+      left: -25%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.3s;
+      z-index: -1;
+    }
+  }
+  &__input:not(:placeholder-shown):invalid ~ &__error-message {
+    opacity: 1;
+  }
+  &__error-message {
+    grid-area: error;
+    color: var(--soft-red);
+    font-size: 0.8125rem;
+    margin: 0.5rem 0;
+    opacity: 0;
+    padding-left: 1.5rem;
+    transition: 0.3s;
+  }
+}
+
+.footer {
+  @include media-tablet {
+    grid-area: footer;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1.5rem 0;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
