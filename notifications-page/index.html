@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Notifications page</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="header__title">Notifications</h1>
+        <span class="header__count">3</span>
+        <button id="mark-all-read" class="header__clear" type="button">
+          Mark all as read
+        </button>
+      </header>
+
+      <main class="main">
+        <ul class="notifications">
+          <li class="notification notification--unread">
+            <img
+              src="assets/images/avatar-mark-webber.webp"
+              alt="avatar-mark-webber"
+              class="notification__avator"
+            />
+            <p class="notification__content">
+              <a href="javascript:void" class="notification__content-user-name">
+                Mark Webber
+              </a>
+              reacted to your recent post
+              <a href="javascript:void" class="notification__content-post-link">
+                My first tournament today!
+              </a>
+            </p>
+            <span class="notification__date">1m ago</span>
+          </li>
+          <li class="notification notification--unread">
+            <img
+              src="assets/images/avatar-angela-gray.webp"
+              alt="avatar-angela-gray"
+              class="notification__avator"
+            />
+            <p class="notification__content">
+              <a href="javascript:void" class="notification__content-user-name">
+                Angela Gray
+              </a>
+              followed you
+            </p>
+            <span class="notification__date">5m ago</span>
+          </li>
+          <li class="notification notification--unread">
+            <img
+              src="assets/images/avatar-jacob-thompson.webp"
+              alt="avatar-jacob-thompson"
+              class="notification__avator"
+            />
+            <p class="notification__content">
+              <a href="javascript:void" class="notification__content-user-name">
+                Jacob Thompson
+              </a>
+              has joined your group
+              <a href="javascript:void" class="notification__content-club">
+                Chess Club
+              </a>
+            </p>
+            <span class="notification__date">1 day ago</span>
+          </li>
+          <li class="notification">
+            <img
+              src="assets/images/avatar-rizky-hasanuddin.webp"
+              alt="avatar-rizky-hasanuddin"
+              class="notification__avator"
+            />
+            <p class="notification__content">
+              <a href="javascript:void" class="notification__content-user-name">
+                Rizky Hasanuddin
+              </a>
+              sent you a private message
+            </p>
+            <span class="notification__date">5 days ago</span>
+            <article class="notification__message">
+              Hello, thanks for setting up the Chess Club. I've been a member
+              for a few weeks now and I'm already having lots of fun and
+              improving my game.
+            </article>
+          </li>
+          <li class="notification">
+            <img
+              src="assets/images/avatar-kimberly-smith.webp"
+              alt="avatar-kimberly-smith"
+              class="notification__avator"
+            />
+            <p class="notification__content">
+              <a href="javascript:void" class="notification__content-user-name">
+                Kimberly Smith
+              </a>
+              commented on your picture
+            </p>
+            <a href="javasript:void" class="notification__picture">
+              <img src="assets/images/image-chess.webp" alt="image-chess" />
+            </a>
+            <span class="notification__date">1 week ago</span>
+          </li>
+          <li class="notification">
+            <img
+              src="assets/images/avatar-nathan-peterson.webp"
+              alt="avatar-nathan-peterson"
+              class="notification__avator"
+            />
+            <p class="notification__content">
+              <a href="javascript:void" class="notification__content-user-name">
+                Nathan Peterson reacted
+              </a>
+              to your recent post
+              <a href="javascript:void" class="notification__content-post-link">
+                5 end-game strategies to increase your win rate
+              </a>
+            </p>
+            <span class="notification__date">2 weeks ago</span>
+          </li>
+          <li class="notification">
+            <img
+              src="assets/images/avatar-anna-kim.webp"
+              alt="avatar-anna-kim"
+              class="notification__avator"
+            />
+            <p class="notification__content">
+              Anna Kim left the group
+              <a href="javascript:void" class="notification__content-club">
+                Chess Club
+              </a>
+            </p>
+            <span class="notification__date">2 weeks ago</span>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">szkmsy</a>.
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
