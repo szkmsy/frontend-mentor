@@ -4,7 +4,7 @@ This is a solution to the [Base Apparel coming soon page challenge on Frontend M
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://64d243425e7289103791016f--joyful-duckanoo-920ff9.netlify.app/)
+- Live Site URL: [Add live site URL here](https://64d37698c80e6c51f85ad7a9--gilded-pastelito-6f3e1d.netlify.app/)
 
 ## My process
 
