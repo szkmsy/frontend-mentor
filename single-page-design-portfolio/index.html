@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Single-page design portfolio</title>
+
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="logo">
+        <img src="assets/logo.svg" alt="Amy" />
+      </a>
+      <button class="cta cta--primary" type="button">Free Consultation</button>
+    </header>
+
+    <main class="main">
+      <section class="intro wrapper">
+        <article class="intro__text">
+          <h1 class="intro__title">Design solutions made easy</h1>
+          <p class="intro__para">
+            With over ten years of experience in various design disciplines, I’m
+            your one-stop shop for your design needs.
+          </p>
+        </article>
+        <ul class="intro__skills">
+          <li class="intro__skills-category">
+            <img
+              src="assets/pattern-graphic-design.svg"
+              alt="graphic-design"
+              class="intro__skills-category-image"
+            />
+            <p class="intro__skills-category-text">Graphic Design</p>
+          </li>
+          <li class="intro__skills-category">
+            <img
+              src="assets/pattern-ui-ux.svg"
+              alt="graphic-design"
+              class="intro__skills-category-image"
+            />
+            <p class="intro__skills-category-text">UI/UX</p>
+          </li>
+          <li class="intro__skills-category">
+            <img
+              src="assets/pattern-apps.svg"
+              alt="graphic-design"
+              class="intro__skills-category-image"
+            />
+            <p class="intro__skills-category-text">Apps</p>
+          </li>
+          <li class="intro__skills-category">
+            <img
+              src="assets/pattern-photography.svg"
+              alt="graphic-design"
+              class="intro__skills-category-image"
+            />
+            <p class="intro__skills-category-text">Photography</p>
+          </li>
+          <li class="intro__skills-category">
+            <img
+              src="assets/pattern-illustrations.svg"
+              alt="graphic-design"
+              class="intro__skills-category-image"
+            />
+            <p class="intro__skills-category-text">Illustrations</p>
+          </li>
+          <li class="intro__skills-category">
+            <img
+              src="assets/pattern-motion-graphics.svg"
+              alt="graphic-design"
+              class="intro__skills-category-image"
+            />
+            <p class="intro__skills-category-text">Motion Graphics</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="profile wrapper">
+        <div class="profile__image">
+          <img src="assets/image-amy.webp" alt="face-image" />
+        </div>
+        <section class="profile__text">
+          <h2 class="profile__text-title">
+            I’m Amy, and I’d love to work on your next project
+          </h2>
+          <p class="profile__text-para">
+            I love working with others to create beautiful design solutions.
+            I’ve designed everything from brand illustrations to complete mobile
+            apps. I’m also handy with a camera!
+          </p>
+          <button class="cta cta--secondary" type="button">
+            Free Consultation
+          </button>
+        </section>
+      </section>
+
+      <section class="slider">
+        <h3 class="slider__title">My Work</h3>
+        <ul class="slider__list">
+          <li class="slider__item">
+            <img src="assets/image-slide-1.jpg" alt="image-slide-1" />
+          </li>
+          <li class="slider__item">
+            <img src="assets/image-slide-2.jpg" alt="image-slide-2" />
+          </li>
+          <li class="slider__item">
+            <img src="assets/image-slide-3.jpg" alt="image-slide-3" />
+          </li>
+          <li class="slider__item">
+            <img src="assets/image-slide-4.jpg" alt="image-slide-4" />
+          </li>
+          <li class="slider__item">
+            <img src="assets/image-slide-5.jpg" alt="image-slide-5" />
+          </li>
+        </ul>
+        <div class="slider__control">
+          <button class="slider__button slider__button--prev" type="button">
+            <img src="assets/icon-arrow-left.svg" alt="<" />
+          </button>
+          <button class="slider__button slider__button--next" type="button">
+            <img src="assets/icon-arrow-right.svg" alt=">" />
+          </button>
+        </div>
+      </section>
+
+      <section class="contact wrapper">
+        <div class="contact__content">
+          <h3 class="contact__title">Book a call with me</h3>
+          <p class="contact__para">
+            I’d love to have a chat to see how I can help you. The best first
+            step is for us to discuss your project during a free consultation.
+            Then we can move forward from there.
+          </p>
+          <button class="contact__cta cta cta--secondary" type="button">
+            Free Consultation
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="/" class="logo">
+        <img src="assets/logo.svg" alt="amy" />
+      </a>
+
+      <button class="cta cta--primary" type="button">Free Consultation</button>
+    </footer>
+  </body>
+</html>
