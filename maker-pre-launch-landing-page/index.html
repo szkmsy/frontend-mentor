@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Maker pre-launch landing page</title>
+
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="logo">
+        <img src="assets/logo.svg" alt="maker" />
+      </a>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero__image--left">
+          <img src="assets/illustration-hero-left.svg" alt="hero-image-left" />
+        </div>
+        <div class="hero__image">
+          <img src="assets/illustration-hero-mobile.png" alt="hero-image" />
+        </div>
+        <div class="hero__image--right">
+          <img
+            src="assets/illustration-hero-right.svg"
+            alt="hero-image-right"
+          />
+        </div>
+        <div class="hero__text">
+          <h1 class="hero__title">
+            Get paid for the work you
+            <span class="hero__title--emphasis">love</span> to do.
+          </h1>
+          <p class="hero__para">
+            The 9-5 grind is so last century. We believe in living life on your
+            own terms. Whether you’re looking to escape the rat race or set up a
+            side hustle, we’ve got you covered.
+          </p>
+        </div>
+        <img
+          src="assets/icon-scroll.svg"
+          alt="icon-scroll"
+          class="hero__scroll"
+        />
+      </section>
+
+      <section class="slogans">
+        <ul class="slogans__list">
+          <li class="slogans__item">
+            <article class="slogan">
+              <img
+                src="assets/illustration-passions.svg"
+                alt="passions"
+                class="slogan__icon"
+              />
+              <div class="slogan__text">
+                <h3 class="slogan__title">Indulge your passions</h3>
+                <p class="slogan__description">
+                  Your passions shouldn't be just for the weekend. Earn a living
+                  doing what you love.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="slogans__item">
+            <article class="slogan">
+              <img
+                src="assets/illustration-financial-freedom.svg"
+                alt="financial-freedom"
+                class="slogan__icon"
+              />
+              <div class="slogan__text">
+                <h3 class="slogan__title">Gain financial freedom</h3>
+                <p class="slogan__description">
+                  Start making money work for you. There’s nothing quite like
+                  earning while you sleep.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="slogans__item">
+            <article class="slogan">
+              <img
+                src="assets/illustration-lifestyle.svg"
+                alt="lifestyle"
+                class="slogan__icon"
+              />
+              <div class="slogan__text">
+                <h3 class="slogan__title">Choose your lifestyle</h3>
+                <p class="slogan__description">
+                  Own your daily schedule. Fancy a lie-in? Go for it! Take
+                  charge of your week.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="slogans__item">
+            <article class="slogan">
+              <img
+                src="assets/illustration-work-anywhere.svg"
+                alt="work-anywhere"
+                class="slogan__icon"
+              />
+              <div class="slogan__text">
+                <h3 class="slogan__title">Work from anywhere</h3>
+                <p class="slogan__description">
+                  Selling online means not being pinned down. Want to work AND
+                  travel? Go for it!
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <section class="plans">
+        <div class="plans__text">
+          <h2 class="plans__title">Our pricing plans</h2>
+          <p class="plans__para">
+            We only make money when our creators make money. Our plans are
+            always affordable, and it’s completely free to get started.
+          </p>
+        </div>
+        <ul class="plans__list">
+          <li class="plans__item">
+            <article class="plan plan--primary">
+              <img src="assets/icon-free.svg" alt="free" class="plan__icon" />
+              <h3 class="plan__title">Dip your toe</h3>
+              <p class="plan__description">
+                Just getting started? No problem at all! Our free plan will take
+                you a long way.
+              </p>
+              <h4 class="plan__price">Free</h4>
+              <ul class="plan__features">
+                <li class="plan__feature">Unlimited products</li>
+                <li class="plan__feature">Basic analytics</li>
+                <li class="plan__feature">Limited marketplace exposure</li>
+                <li class="plan__feature">10% fee per transaction</li>
+              </ul>
+            </article>
+          </li>
+          <li class="plans__item">
+            <article class="plan plan--secondary">
+              <img src="assets/icon-paid.svg" alt="paid" class="plan__icon" />
+              <h3 class="plan__title">Dive right in</h3>
+              <p class="plan__description">
+                Ready for the big time? Our paid plan will help you take your
+                business to the next level.
+              </p>
+              <h4 class="plan__price">
+                $25.00 <span class="plan__interval">/month</span>
+              </h4>
+              <ul class="plan__features">
+                <li class="plan__feature">Custom domain</li>
+                <li class="plan__feature">Advanced analytics and reports</li>
+                <li class="plan__feature">High marketplace visibility</li>
+                <li class="plan__feature">5% fee per transaction</li>
+              </ul>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <form id="notify-form" class="notify">
+        <h2 class="notify__title">Get notified when we launch</h2>
+        <fieldset class="notify__field">
+          <div class="notify__control">
+            <input
+              class="notify__email"
+              name="email"
+              placeholder="Email address"
+              required
+              type="email"
+            />
+            <p class="notify__error">
+              Oops! that doesn't look like an email address
+            </p>
+          </div>
+          <button class="notify__submit" type="submit">Get notified</button>
+        </fieldset>
+      </form>
+    </footer>
+  </body>
+</html>
