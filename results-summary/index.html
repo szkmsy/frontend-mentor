@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Results summary component</title>
+  </head>
+  <body>
+    <main class="main">
+      <article class="result">
+        <h2 class="result__title">Your Result</h2>
+        <article class="result__ratio">
+          <p class="result__ratio-numerator">76</p>
+          <p class="result__ratio-denominator">of 100</p>
+        </article>
+
+        <article class="result__evaluation">
+          <h4 class="result__evaluation-title">Great</h4>
+          <p class="result__evaluation-description">
+            Your performance exceed 65% of the people conducing the test here!
+          </p>
+        </article>
+      </article>
+
+      <form class="summary">
+        <h3 class="summary__title">Summary</h3>
+        <ul class="summary__list">
+          <li class="summary__list-item summary__list-item--reaction">
+            <img src="assets/images/icon-reaction.svg" alt="reaction" />
+            <span>Reaction</span>
+            <p class="summary__list-item-value">
+              <span class="summary__list-item-value-numerator">80</span>
+              <span class="summary__list-item-value-slash">/</span>
+              <span class="summary__list-item-value-denominator">100</span>
+            </p>
+          </li>
+          <li class="summary__list-item summary__list-item--memory">
+            <img src="assets/images/icon-memory.svg" alt="memory" />
+            <span>Memory</span>
+            <p class="summary__list-item-value">
+              <span class="summary__list-item-value-numerator">92</span>
+              <span class="summary__list-item-value-slash">/</span>
+              <span class="summary__list-item-value-denominator">100</span>
+            </p>
+          </li>
+          <li class="summary__list-item summary__list-item--verbal">
+            <img src="assets/images/icon-verbal.svg" alt="verbal" />
+            <span>Verbal</span>
+            <p class="summary__list-item-value">
+              <span class="summary__list-item-value-numerator">61</span>
+              <span class="summary__list-item-value-slash">/</span>
+              <span class="summary__list-item-value-denominator">100</span>
+            </p>
+          </li>
+          <li class="summary__list-item summary__list-item--visual">
+            <img src="assets/images/icon-visual.svg" alt="visual" />
+            <span>Visual</span>
+            <p class="summary__list-item-value">
+              <span class="summary__list-item-value-numerator">73</span>
+              <span class="summary__list-item-value-slash">/</span>
+              <span class="summary__list-item-value-denominator">100</span>
+            </p>
+          </li>
+        </ul>
+        <button class="summary__submit" type="submit">Continue</button>
+      </form>
+    </main>
+  </body>
+</html>

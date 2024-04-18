@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("assets/fonts/HankenGrotesk-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+:root {
+  // Colors
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  --grad-light-slate-blue: hsl(252, 100%, 67%);
+  --grad-light-royal-blue: hsl(241, 81%, 54%);
+  --grad-violet-blue: hsla(256, 72%, 46%, 1);
+  --grad-persian-blue: hsla(241, 72%, 46%, 0);
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+
+  // Font sizes
+  --text-heading-xl: 4.5rem;
+  --text-heading-l: 2rem;
+  --text-heading-m: 1.5rem;
+  --text-body: 1.125rem;
+
+  // Font weights
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+@mixin mq-tablet {
+  @media (min-width: 40rem) {
+    @content;
+  }
+}
+
+.main {
+  @include mq-tablet() {
+    display: flex;
+  }
+}
+
+.result {
+  background: linear-gradient(
+    to bottom,
+    var(--grad-light-slate-blue),
+    var(--grad-light-royal-blue)
+  );
+  border-radius: 0 0 2rem 2rem;
+  display: grid;
+  place-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 3rem 2.5rem;
+  @include mq-tablet() {
+    border-radius: 2rem;
+    gap: 0;
+  }
+
+  &__title {
+    color: var(--light-lavender);
+  }
+
+  &__ratio {
+    background: linear-gradient(
+      to bottom,
+      var(--grad-violet-blue),
+      var(--grad-persian-blue)
+    );
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    padding: 1.375rem 2.375rem;
+    width: 8.75rem;
+    height: 8.75rem;
+
+    @include mq-tablet() {
+      width: 12.5rem;
+      height: 12.5rem;
+    }
+
+    &-numerator {
+      color: var(--white);
+      font-size: 3.5rem;
+      font-weight: var(--font-weight-extra-bold);
+    }
+
+    &-denominator {
+      color: var(--light-lavender);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  &__evaluation {
+    text-align: center;
+
+    &-title {
+      color: var(--white);
+      font-size: var(--text-heading-m);
+      padding-bottom: 0.5rem;
+    }
+
+    &-description {
+      color: var(--light-lavender);
+      font-weight: var(--font-weight-medium);
+      max-width: 15.25rem;
+    }
+  }
+}
+
+.summary {
+  padding: 1.5rem 1.875rem;
+  @include mq-tablet() {
+    padding: 2.375rem 2.5rem 2.875rem;
+  }
+
+  &__title {
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-bold);
+
+    @include mq-tablet {
+      font-size: var(--text-heading-m);
+    }
+  }
+  &__list {
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+    padding: 1.5rem 0;
+    min-width: 18rem;
+
+    @include mq-tablet {
+      padding: 1.75rem 0 2.5rem;
+    }
+
+    &-item {
+      border-radius: 0.75rem;
+      display: flex;
+      font-size: var(--text-body);
+      font-weight: var(--font-weight-bold);
+      gap: 0.75rem;
+      padding: 1rem;
+      > :nth-child(2) {
+        flex-grow: 1;
+      }
+
+      &--reaction {
+        color: var(--light-red);
+        background-color: color-mix(in srgb, white 95%, red 5%);
+      }
+      &--memory {
+        color: var(--orangey-yellow);
+        background-color: color-mix(in srgb, white 95%, yellow 5%);
+      }
+      &--verbal {
+        color: var(--green-teal);
+        background-color: color-mix(in srgb, white 95%, green 5%);
+      }
+      &--visual {
+        color: var(--cobalt-blue);
+        background-color: color-mix(in srgb, white 95%, blue 5%);
+      }
+
+      &-value {
+        color: var(--dark-gray-blue);
+        font-weight: var(--font-weight-bold);
+        &-numerator {
+        }
+        &-slash {
+          opacity: 0.5;
+        }
+        &-denominator {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  &__submit {
+    background: linear-gradient(
+      to bottom,
+      var(--grad-light-slate-blue),
+      var(--grad-light-royal-blue)
+    );
+    border-radius: 8rem;
+    border: 0;
+    color: var(--white);
+    cursor: pointer;
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-bold);
+    font-family: inherit;
+    padding: 1rem 0;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background: var(--dark-gray-blue);
+    }
+  }
+}
