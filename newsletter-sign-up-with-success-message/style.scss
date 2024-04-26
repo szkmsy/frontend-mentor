@@ -1,0 +1,250 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+:root {
+  // Colors
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+@mixin tablet() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin text-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+  @include tablet {
+    font-size: 3.5rem;
+  }
+}
+
+@mixin text-body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@mixin text-body-bold {
+  @include text-body;
+  font-weight: bold;
+}
+
+@mixin text-body-small {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+@mixin button-base-style {
+  background-color: var(--dark-slate-grey);
+  border-radius: 0.5rem;
+  border: 0;
+  color: var(--white);
+  @include text-body-bold;
+  padding: 1.125rem 0;
+  transition: 0.5s;
+
+  &:hover {
+    background: linear-gradient(to bottom, var(--tomato), #ff416c);
+    cursor: pointer;
+    opacity: 0.95;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--dark-slate-grey);
+  font-family: "Roboto", sans-serif;
+  @include text-body;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button {
+  outline-color: var(--dark-slate-grey);
+}
+
+.sign-up {
+  display: grid;
+  place-content: center;
+
+  @include desktop {
+    display: flex;
+    gap: 4rem;
+    padding: 1.5rem;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    @include desktop {
+      order: -1;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    @include text-heading;
+  }
+
+  &__description {
+    max-width: 23.5rem;
+  }
+
+  &__ads-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    list-style: none;
+
+    &-item {
+      padding-left: 2.3125rem;
+      position: relative;
+      &::before {
+        content: url("../assets/images/icon-list.svg");
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__email {
+    display: grid;
+    grid-template-areas:
+      "label . error"
+      "input input input";
+    gap: 0.5rem;
+    margin-top: 1rem;
+    @include text-body-small;
+
+    &__label {
+      grid-area: label;
+    }
+
+    &__input {
+      grid-area: input;
+      border-radius: 0.5rem;
+      border: 1px solid var(--grey);
+      padding: 1rem 1.5rem;
+      @include text-body;
+
+      &:invalid:not(:placeholder-shown) {
+        border-color: var(--tomato);
+        background-color: color-mix(in srgb, var(--tomato) 15%, var(--white));
+        color: var(--tomato);
+      }
+    }
+
+    &__input:invalid:not(:placeholder-shown) + &__error {
+      opacity: 1;
+    }
+
+    &__input + &__error {
+      grid-area: error;
+      justify-self: end;
+      color: var(--tomato);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &__subscribe {
+    @include button-base-style;
+  }
+}
+
+.success-dialog {
+  border: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow: auto;
+  padding: 9.3125rem 1.5rem 2.5rem;
+  max-height: initial;
+  max-width: initial;
+  width: 100%;
+
+  &::backdrop {
+    background-color: hsla(0, 0%, 0%, 0.5);
+  }
+
+  @include tablet {
+    border-radius: 2.25rem;
+    padding: 3rem 4rem 4rem;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    max-height: 33rem;
+    min-width: 31.5rem;
+    width: initial;
+  }
+}
+
+.success-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+  margin: 0 auto;
+  height: 100%;
+  max-width: 23.5rem;
+
+  &__icon {
+    padding-bottom: 1rem;
+  }
+
+  &__title {
+    @include text-heading;
+  }
+
+  &__description {
+    flex-grow: 1;
+    &--contact {
+      font-weight: bold;
+    }
+  }
+
+  &__dismiss {
+    align-self: stretch;
+    @include button-base-style;
+    @include tablet {
+      margin-top: 1rem;
+    }
+  }
+}
